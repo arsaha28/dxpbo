@@ -9,14 +9,14 @@ import java.util.Date;
 @Data
 @ToString
 @AllArgsConstructor
-public class LoanStep {
+public class Step {
 
     private String name;
     private String description;
     private Date startDate;
     private Date endDate;
 
-    public LoanStep(String name) {
+    public Step(String name) {
         this.name = name;
     }
 

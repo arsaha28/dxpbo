@@ -1,28 +1,28 @@
 package com.dxp.bo.application.generator;
 
-import com.dxp.bo.application.model.LoanPhase;
-import com.dxp.bo.application.model.LoanStep;
+import com.dxp.bo.application.model.Phase;
+import com.dxp.bo.application.model.Step;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class LoanLifecycleManager {
 
-    private List<LoanPhase> phases;
+    private List<Phase> phases;
 
     public LoanLifecycleManager() {
         this.phases = initializePhases();
     }
 
-    private List<LoanPhase> initializePhases() {
+    private List<Phase> initializePhases() {
         // Define the phases and steps in the loan lifecycle
-        List<LoanPhase> phases = new ArrayList<>();
+        List<Phase> phases = new ArrayList<>();
 
-        LoanPhase preApplicationPhase = new LoanPhase("Pre-Application Phase");
-        preApplicationPhase.getSteps().add (new LoanStep("Research and Planning"));
+        Phase preApplicationPhase = new Phase("Pre-Application Phase");
+        preApplicationPhase.getSteps().add (new Step("Research and Planning"));
 
-        LoanPhase applicationPhase = new LoanPhase("Application Phase");
-        applicationPhase.getSteps().add(new LoanStep("Application Submission"));
+        Phase applicationPhase = new Phase("Application Phase");
+        applicationPhase.getSteps().add(new Step("Application Submission"));
 
         // ... (other phases and steps)
 
@@ -33,9 +33,9 @@ public class LoanLifecycleManager {
     }
 
     public void printLoanLifecycle() {
-        for (LoanPhase phase : phases) {
+        for (Phase phase : phases) {
             System.out.println(phase.getName());
-            for (LoanStep step : phase.getSteps()) {
+            for (Step step : phase.getSteps()) {
                 System.out.println("  - " + step.getName());
             }
             System.out.println();
