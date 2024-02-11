@@ -10,5 +10,5 @@ import lombok.Data;
 public class DebtorAccount {
 
     @XmlElement(name = "Id")
-    private Identification identification;
+    private Identification identification = new Identification();
 }
