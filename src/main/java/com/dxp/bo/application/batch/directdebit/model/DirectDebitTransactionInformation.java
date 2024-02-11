@@ -1,4 +1,4 @@
-package com.dxp.bo.application.batch.model;
+package com.dxp.bo.application.batch.directdebit.model;
 
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;

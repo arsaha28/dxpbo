@@ -1,18 +1,14 @@
-package com.dxp.bo.application.batch.model;
+package com.dxp.bo.application.batch.directdebit.model;
 
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import lombok.Data;
 
-
 @XmlAccessorType(XmlAccessType.FIELD)
 @Data
-public class Creditor {
+public class LocalInstrument {
 
-    @XmlElement(name = "Nm")
-    private String name;
-
-    @XmlElement(name = "PstlAdr")
-    private PostalAddress postalAddress;
+    @XmlElement(name = "Cd")
+    private String code;
 }

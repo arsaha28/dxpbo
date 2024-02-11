@@ -1,5 +1,4 @@
-package com.dxp.bo.application.batch.model;
-
+package com.dxp.bo.application.batch.directdebit.model;
 
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -8,13 +7,10 @@ import lombok.Data;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @Data
-public class MandateRelatedInformation {
+public class PaymentId {
 
-    @XmlElement(name = "MndtId")
-    private String mandateId;
-
-    @XmlElement(name = "DtOfSgntr")
-    private String dateOfSignature;
+    @XmlElement(name = "EndToEndId")
+    private String endToEndId;
 
     // Getters and setters
 }

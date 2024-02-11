@@ -1,4 +1,4 @@
-package com.dxp.bo.application.batch.model;
+package com.dxp.bo.application.batch.directdebit.model;
 
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -7,7 +7,8 @@ import lombok.Data;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @Data
-public class CreditorAgent {
-    @XmlElement(name = "FinInstnId")
-    private FinancialInstitutionIdentification financialInstitutionIdentification;
+public class DebtorAccount {
+
+    @XmlElement(name = "Id")
+    private Identification identification = new Identification();
 }

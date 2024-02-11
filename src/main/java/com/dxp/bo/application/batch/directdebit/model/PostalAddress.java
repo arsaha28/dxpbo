@@ -1,5 +1,4 @@
-package com.dxp.bo.application.batch.model;
-
+package com.dxp.bo.application.batch.directdebit.model;
 
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -8,8 +7,11 @@ import lombok.Data;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @Data
-public class CreditorAccount {
+public class PostalAddress {
 
-    @XmlElement(name = "Id")
-    private Identification identification;
+    @XmlElement(name = "Ctry")
+    private String country;
+
+    @XmlElement(name = "AdrLine")
+    private String addressLine;
 }

@@ -1,6 +1,6 @@
-package com.dxp.bo.application.batch.processor;
+package com.dxp.bo.application.batch.directdebit.processor;
 
-import com.dxp.bo.application.batch.model.*;
+import com.dxp.bo.application.batch.directdebit.model.*;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBElement;

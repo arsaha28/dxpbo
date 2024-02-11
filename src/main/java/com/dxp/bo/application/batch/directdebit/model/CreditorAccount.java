@@ -1,4 +1,4 @@
-package com.dxp.bo.application.batch.model;
+package com.dxp.bo.application.batch.directdebit.model;
 
 
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -8,8 +8,8 @@ import lombok.Data;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @Data
-public class DirectDebitTransaction {
+public class CreditorAccount {
 
-    @XmlElement(name = "MndtRltdInf")
-    private MandateRelatedInformation mandateRelatedInformation;
+    @XmlElement(name = "Id")
+    private Identification identification;
 }

@@ -1,4 +1,4 @@
-package com.dxp.bo.application.batch.model;
+package com.dxp.bo.application.batch.directdebit.model;
 
 
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -8,8 +8,8 @@ import lombok.Data;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @Data
-public class CreditorSchemeIdentification {
+public class Identification {
 
-    @XmlElement(name = "Id")
-    private Identification identification;
+    @XmlElement(name = "IBAN")
+    private String iban;
 }
