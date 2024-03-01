@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.ToString;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
@@ -17,7 +18,7 @@ public class Phase {
     private String description;
     private Date startDate;
     private Date endDate;
-    private List<Step> steps = Collections.emptyList();
+    private List<Step> steps = new ArrayList<>();
 
     public Phase(String name) {
         this.name = name;

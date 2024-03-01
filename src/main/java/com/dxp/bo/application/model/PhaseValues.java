@@ -4,7 +4,7 @@ public enum PhaseValues {
 
     PreApplication("Pre-Application"),
     Application("Application"),
-    Processing(""),
+    Processing("Loan Processing Phase"),
     ApprovalAndDisbursement("Loan Processing"),
     Repayment("Repayment"),
     Monitoring("Monitoring and Communication"),
