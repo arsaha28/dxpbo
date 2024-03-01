@@ -1,7 +1,9 @@
 package com.dxp.bo.application.executor;
 
 import com.dxp.bo.application.model.*;
+import org.springframework.stereotype.Component;
 
+@Component
 public class ApplicationSubmissionExecutor implements PhaseStepExecutor{
     @Override
     public boolean execute(Loan loan) {
