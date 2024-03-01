@@ -5,6 +5,8 @@ import lombok.ToString;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
+
 @Data
 @ToString
 @AllArgsConstructor
@@ -20,5 +22,7 @@ public class Loan {
     private BigDecimal monthlyInstallmentAmount;
     private Date startDate;
     private Date endDate;
+    private Phase phase;
+    private List<Phase> allPhases;
 
 }
