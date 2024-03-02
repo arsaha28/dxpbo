@@ -6,6 +6,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import java.util.Date;
@@ -14,10 +15,12 @@ import java.util.Date;
 @ToString
 @AllArgsConstructor
 @Entity
+@NoArgsConstructor
 public class Step {
 
     @Id
     @GeneratedValue(strategy= GenerationType.UUID)
+    private String id;
     private String name;
     private String description;
     private Date startDate;

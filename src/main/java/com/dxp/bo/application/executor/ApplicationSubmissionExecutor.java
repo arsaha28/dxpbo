@@ -1,19 +1,31 @@
 package com.dxp.bo.application.executor;
 
 import com.dxp.bo.application.model.*;
+import com.dxp.bo.application.repository.LoanRepository;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import java.util.Arrays;
+import java.util.Date;
 
 @Component
 @Slf4j
 public class ApplicationSubmissionExecutor implements PhaseStepExecutor{
+
+    @Autowired
+    private LoanRepository loanRepository;
     @Override
     public boolean execute(Loan loan) {
-        log.info("Account management invoked for :{}",loan.getId());
+        log.info("invoked for :{}",loan.getId());
+        Phase applicationPhase = new Phase(PhaseValues.Application.phase);
+        applicationPhase.setStartDate(new Date());
 
-        Phase  loanProcessingPhase = new Phase(PhaseValues.Processing.phase);
-        loanProcessingPhase.getSteps().add(new Step(StepValues.DocumentVerification.step));
-        loan.setPhase(loanProcessingPhase);
+        Step step = new Step(StepValues.ApplicationSubmission.step);
+        step.setStartDate(new Date());
+        applicationPhase.setSteps(Arrays.asList(step));
+        loan.setAllPhases(Arrays.asList(applicationPhase));
+        Loan loanPersisted = loanRepository.save(loan);
         return false;
     }
 }

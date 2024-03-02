@@ -24,9 +24,10 @@ public class Phase {
     private String description;
     private Date startDate;
     private Date endDate;
-    @OneToMany
-    private List<Step> steps = new ArrayList<>();
+    @OneToMany(cascade=CascadeType.ALL)
+    private List<Step> steps;
 
+    private transient Step step;
     public Phase(String name) {
         this.name = name;
     }

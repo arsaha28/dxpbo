@@ -30,9 +30,13 @@ public class Loan {
     private BigDecimal monthlyInstallmentAmount;
     private Date startDate;
     private Date endDate;
-
     private transient Phase phase;
     @OneToMany(cascade=CascadeType.ALL)
-    private List<Phase> allPhases;
+    private List<Phase> allPhases ;
+
+
+    public Phase getPhase() {
+        return allPhases.stream().filter(p->p.getEndDate() == null).findFirst().get();
+    }
 
 }
