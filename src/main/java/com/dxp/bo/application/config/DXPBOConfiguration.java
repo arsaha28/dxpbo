@@ -18,7 +18,7 @@ public class DXPBOConfiguration {
     private EventConfigurationRepository eventConfigurationRepository;
 
     @Bean
-    public Map<String, EventConfiguration> eventConfig(){
+    public Map<String, EventConfiguration> eventsMap(){
         List<EventConfiguration> eventConfigurationList = eventConfigurationRepository.findAll();
         return  eventConfigurationList.stream().collect(Collectors.toMap(EventConfiguration::getEventName,ec->ec));
     }
