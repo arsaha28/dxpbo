@@ -2,8 +2,7 @@ package com.dxp.bo.application.controller.event;
 
 
 import com.dxp.bo.application.exception.InvalidInputparameterException;
-import com.dxp.bo.application.executor.PhaseStepExecutor;
-import com.dxp.bo.application.model.Customer;
+import com.dxp.bo.application.executor.step.StepExecutor;
 import com.dxp.bo.application.model.EventConfiguration;
 import com.dxp.bo.application.model.Loan;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,7 +33,7 @@ public class EventController {
             throw new InvalidInputparameterException("Event not supported");
         }else {
             String executorStr = eventConfiguration.getEventExecutor();
-            PhaseStepExecutor phaseStepExecutor = (PhaseStepExecutor) applicationContext.getBean(executorStr);
+            StepExecutor phaseStepExecutor = (StepExecutor) applicationContext.getBean(executorStr);
             phaseStepExecutor.execute(loan);
         }
         return new ResponseEntity<>(null, HttpStatus.OK);

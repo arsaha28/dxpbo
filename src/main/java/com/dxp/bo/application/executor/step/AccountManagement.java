@@ -1,4 +1,4 @@
-package com.dxp.bo.application.executor;
+package com.dxp.bo.application.executor.step;
 
 import com.dxp.bo.application.model.*;
 import com.dxp.bo.application.repository.LoanRepository;
@@ -11,7 +11,7 @@ import java.util.Date;
 
 @Component
 @Slf4j
-public class AccountManagement implements PhaseStepExecutor{
+public class AccountManagement implements StepExecutor {
 
     @Autowired
     private LoanRepository loanRepository;

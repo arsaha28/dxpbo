@@ -1,4 +1,4 @@
-package com.dxp.bo.application.executor;
+package com.dxp.bo.application.executor.step;
 
 import com.dxp.bo.application.model.*;
 import com.dxp.bo.application.repository.LoanRepository;
@@ -11,21 +11,20 @@ import java.util.Date;
 
 @Component
 @Slf4j
-public class LoanRepayment implements PhaseStepExecutor{
+public class ApplicationSubmissionExecutor implements StepExecutor {
 
     @Autowired
     private LoanRepository loanRepository;
     @Override
     public boolean execute(Loan loan) {
         log.info("invoked for :{}",loan.getId());
-        Phase phase = new Phase(PhaseValues.Repayment.phase);
-        phase.setStartDate(new Date());
+        Phase applicationPhase = new Phase(PhaseValues.Application.phase);
+        applicationPhase.setStartDate(new Date());
 
-        Step step = new Step(StepValues.LoanRepayment.step);
+        Step step = new Step(StepValues.ApplicationSubmission.step);
         step.setStartDate(new Date());
-        phase.setSteps(Arrays.asList(step));
-        loan.getPhase().setEndDate(new Date());
-        loan.getAllPhases().add(phase);
+        applicationPhase.setSteps(Arrays.asList(step));
+        loan.setAllPhases(Arrays.asList(applicationPhase));
         Loan loanPersisted = loanRepository.save(loan);
         return false;
     }
