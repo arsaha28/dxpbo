@@ -2,11 +2,8 @@ package com.dxp.bo.application.service;
 
 import com.dxp.bo.application.model.Customer;
 import com.dxp.bo.application.repository.CustomerRepository;
-import io.micrometer.observation.ObservationFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class CustomerService {

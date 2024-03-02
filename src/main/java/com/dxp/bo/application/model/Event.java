@@ -13,7 +13,7 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class LoanEvent {
+public class Event {
 
     @Id
     @GeneratedValue(strategy= GenerationType.UUID)
