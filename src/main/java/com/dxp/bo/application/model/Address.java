@@ -6,6 +6,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import java.util.Date;
@@ -14,10 +15,11 @@ import java.util.Date;
 @ToString
 @AllArgsConstructor
 @Entity
+@NoArgsConstructor
 public class Address {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy= GenerationType.UUID)
     private String addressId;
     private String customerID;
     private String line1;

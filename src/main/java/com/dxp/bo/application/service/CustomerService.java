@@ -13,18 +13,13 @@ public class CustomerService {
     
     @Autowired
     private CustomerRepository customerRepository;
-    
-    public List<Customer> findByCustomerId(Long customerId) {
-        return customerRepository.findByCustomerId(customerId);
+
+    public Customer write(Customer customer){
+       return customerRepository.save(customer);
     }
-    
-    public List<Customer> findByFirstName(String firstName) {
-        return customerRepository.findByFirstName(firstName);
-    }
-    
-    public List<Customer> findByLastName(String lastName) {
-        return customerRepository.findByLastName(lastName);
-    }
+
+
+
 
 
 }
